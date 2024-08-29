@@ -1,0 +1,44 @@
+div {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+div.acoesBrinquedo{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    padding: 10px;
+}
+
+div.acoesBrinquedo > div{
+    padding:3px;
+}
+
+form.excluirBrinquedo{
+    padding:0px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+div > div {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+div > div:last-child {
+    border-bottom: none;
+}
+
+h3 {
+    margin: 5px 0;
+    font-size: 18px;
+    color: var(--font-color);
+}

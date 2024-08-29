@@ -1,0 +1,29 @@
+body {
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+    font-size: var(--font-size);
+    margin: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #9b59b6;
+}
+
+a:active {
+    color: #e74c3c;
+}

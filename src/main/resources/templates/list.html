@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Brinquedos</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div>
+    <h1>Lista de Brinquedos</h1>
+    <div th:each="brinquedo : ${brinquedos}">
+        <h3 th:text="'Id: ' + ${brinquedo.getId()}"></h3>
+        <h3 th:text="'Nome: ' + ${brinquedo.getNome()}"></h3>
+        <h3 th:text="'Tipo: ' + ${brinquedo.getTipo().getDescription()}"></h3>
+        <h3 th:text="'Classificacao: ' + ${brinquedo.getClassificacao().getDescription()}"></h3>
+        <h3 th:text="'Tamanho: ' + ${brinquedo.getTamanho()}"></h3>
+        <h3 th:text="'Preço: ' + ${brinquedo.getPreco()}"></h3>
+
+        <div class="acoesBrinquedo">
+            <div>
+                <a th:href="@{/brinquedos/edit/{id}(id=${brinquedo.id})}">Editar</a>
+            </div>
+            <div>
+                <form th:action="@{/brinquedos/delete/{id}(id=${brinquedo.id})}" method="post" style="display:inline;" class="excluirBrinquedo">
+                    <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este brinquedo?');">Excluir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <a th:href="@{/brinquedos/create}">Criar um novo Brinquedo</a>
+
+</div>
+</body>
+</html>

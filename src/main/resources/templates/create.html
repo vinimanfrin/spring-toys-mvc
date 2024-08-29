@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar novo brinquedo</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<form method="POST" th:action="@{/brinquedos/create}" th:object="${brinquedoCreateDto}">
+    <h1 th:text="${brinquedoCreateDto.getId() == null ? 'Adicionar Brinquedo' : 'Editar Brinquedo'}"></h1>
+
+    <input type="hidden" th:field="*{id}" />
+
+    <label for="nome">Nome</label>
+    <input type="text" th:field="*{nome}" name="nome" id="nome">
+
+    <label for="tipo">Tipo</label>
+    <select id="tipo" name="tipo" th:field="*{tipo}">
+        <option value="" disabled selected>Escolha um tipo</option>
+        <option th:each="tipo : ${tiposBrinquedos}" th:value="${tipo.getCode()}" th:text="${tipo}"></option>
+    </select>
+
+    <label for="classificacao">Classificação</label>
+    <select id="classificacao" name="classificacao" th:field="*{classificacao}">
+        <option value="" disabled selected>Escolha uma classificação</option>
+        <option th:each="classificacao : ${tiposClassificacaoBrinquedo}" th:value="${classificacao.getCode()}" th:text="${classificacao}"></option>
+    </select>
+
+    <label for="tamanho">Tamanho</label>
+    <input type="number" id="tamanho" name="tamanho" th:field="*{tamanho}">
+
+    <label for="preco">Preço:</label>
+    <input type="number" id="preco" min="0" step="0.01" required name="preco" th:field="*{preco}">
+
+    <button type="submit" class="buttonSubmitNewBrinquedo">Salvar</button>
+</form>
+</body>
+</html>
