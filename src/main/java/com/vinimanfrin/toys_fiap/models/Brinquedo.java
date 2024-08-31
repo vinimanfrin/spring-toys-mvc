@@ -2,6 +2,7 @@ package com.vinimanfrin.toys_fiap.models;
 
 import com.vinimanfrin.toys_fiap.models.enums.ClassificacaoBrinquedo;
 import com.vinimanfrin.toys_fiap.models.enums.TipoBrinquedo;
+import com.vinimanfrin.toys_fiap.utils.Constants;
 import com.vinimanfrin.toys_fiap.utils.Conversor;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -86,5 +87,13 @@ public class Brinquedo {
 
     public void setPreco(Long preco) {
         this.preco = preco;
+    }
+
+    public String getValueFormated(){
+        return "R$"+Constants.DECIMAL_FORMAT.format(Conversor.long2Double(preco));
+    }
+
+    public String getTamanhoFormated(){
+        return tamanho+"cm";
     }
 }

@@ -26,13 +26,44 @@
         <option th:each="classificacao : ${tiposClassificacaoBrinquedo}" th:value="${classificacao.getCode()}" th:text="${classificacao}"></option>
     </select>
 
-    <label for="tamanho">Tamanho</label>
-    <input type="number" id="tamanho" name="tamanho" th:field="*{tamanho}">
+    <label for="tamanho">Tamanho em cm</label>
+    <input type="text" id="tamanho" name="tamanho" th:field="*{tamanho}">
 
-    <label for="preco">Preço:</label>
-    <input type="number" id="preco" min="0" step="0.01" required name="preco" th:field="*{preco}">
+    <label for="precoFormatado">Preço:</label>
+    <input type="text" id="precoFormatado" oninput="formatarMoeda(this)">
+    <input type="hidden" id="preco" name="preco" th:field="*{preco}">
+<!--    <input type="number" id="preco" min="0" step="0.01" required name="preco" th:field="*{preco}">-->
 
     <button type="submit" class="buttonSubmitNewBrinquedo">Salvar</button>
 </form>
+
+<script>
+    function formatarMoeda(input) {
+        let value = input.value;
+
+        // Remove tudo que não for dígito
+        value = value.replace(/\D/g, '');
+
+        // Se o valor for vazio ou inválido, limpa os campos e sai da função
+        if (value === "") {
+            input.value = "";
+            document.getElementById('preco').value = "";
+            return;
+        }
+
+        // Converte o valor para número (dividido por 100 para as casas decimais)
+        let numericValue = parseFloat(value) / 100;
+
+        // Atualiza o campo hidden com o valor numérico puro
+        document.getElementById('preco').value = numericValue;
+
+        // Formata o valor para exibição
+        value = numericValue.toFixed(2).replace('.', ',');
+        value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+        // Adiciona o símbolo de Real
+        input.value = 'R$ ' + value;
+    }
+</script>
 </body>
 </html>

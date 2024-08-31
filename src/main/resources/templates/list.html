@@ -13,8 +13,8 @@
         <h3 th:text="'Nome: ' + ${brinquedo.getNome()}"></h3>
         <h3 th:text="'Tipo: ' + ${brinquedo.getTipo().getDescription()}"></h3>
         <h3 th:text="'Classificacao: ' + ${brinquedo.getClassificacao().getDescription()}"></h3>
-        <h3 th:text="'Tamanho: ' + ${brinquedo.getTamanho()}"></h3>
-        <h3 th:text="'Preço: ' + ${brinquedo.getPreco()}"></h3>
+        <h3 th:text="'Tamanho: ' + ${brinquedo.getTamanhoFormated()}"></h3>
+        <h3 th:text="'Preço: ' + ${brinquedo.getValueFormated()}"></h3>
 
         <div class="acoesBrinquedo">
             <div>
