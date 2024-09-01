@@ -23,7 +23,8 @@ _**/brinquedos/list**_
 Retorna uma página web com a lista de brinquedos cadastrados e os seus detalhes.
 
 ### Exemplo de tela
-inserir foto aqui
+
+![image](https://github.com/user-attachments/assets/16602275-5342-4ea2-9242-ae284c4ea854)
 
 ---
 ### Editar detalhes de um brinquedo
@@ -42,7 +43,8 @@ Retorna uma página web com a tela de edição de um produto especificado no end
 | preco | sim       | preço do brinquedo
 
 ### Exemplo de tela
-inserir foto aqui
+![image](https://github.com/user-attachments/assets/2543cbe2-6c5d-4ef3-b60b-237fe4854a97)
+
 
 ---
 ### Cadastrar um novo brinquedo
@@ -61,7 +63,8 @@ Retorna uma página web com a tela de cadastro de um novo produto.
 | preco | sim       | preço do brinquedo
 
 ### Exemplo de tela
-inserir foto aqui
+![image](https://github.com/user-attachments/assets/0ea89f5e-49f6-41f9-b8be-41a5eb3c541b)
+
 
 ---
 
