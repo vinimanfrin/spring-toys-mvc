@@ -1,8 +1,8 @@
 spring:
   datasource:
-    password: admin
-    url: jdbc:postgresql://localhost:5432/spring_toys
-    username: postgres
+    password: ${DB_PASSWORD}
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
 
   jpa:
     hibernate:
